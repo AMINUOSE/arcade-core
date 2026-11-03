@@ -1,0 +1,13 @@
+{
+  "name": "@aminuose/arcade-core",
+  "version": "1.0.0",
+  "description": "Pure game logic for 2048: move, spawn, hasMoves, and canMove.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "files": ["src", "CHANGELOG.md"],
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": ["2048", "game", "arcade"]
+}
