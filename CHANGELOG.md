@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.1
+
+No changes to the game logic.
+
+- Added `repository`, `bugs`, and `homepage` to `package.json`, so the npm page links to the GitHub repository.
+- Added a Svelte 5 example to the README that shows `slide`, `canMove`, `hasMoves`, and `spawn` working together.
+
 ## 1.0.0
 
 Initial release.

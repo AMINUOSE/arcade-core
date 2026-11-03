@@ -1,6 +1,6 @@
 {
   "name": "@aminuose/arcade-core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Pure game logic for 2048: move, spawn, hasMoves, and canMove.",
   "type": "module",
   "main": "src/index.js",
@@ -9,5 +9,13 @@
   "scripts": {
     "test": "node --test"
   },
-  "keywords": ["2048", "game", "arcade"]
+  "keywords": ["2048", "game", "arcade"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AMINUOSE/arcade-core.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AMINUOSE/arcade-core/issues"
+  },
+  "homepage": "https://github.com/AMINUOSE/arcade-core#readme"
 }

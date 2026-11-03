@@ -31,6 +31,43 @@ if (!hasMoves(board)) {
 }
 ```
 
+## Using it in a Svelte 5 app
+
+The package never imports Svelte, so the component below is the only place that knows about it. It keeps the board in `$state`, derives game over from it, and uses `slide` to get the points for each move.
+
+```svelte
+<script>
+  import { slide, spawn, canMove, hasMoves } from '@aminuose/arcade-core';
+
+  const emptyBoard = () => Array.from({ length: 4 }, () => [0, 0, 0, 0]);
+  const keys = { ArrowLeft: 'left', ArrowRight: 'right', ArrowUp: 'up', ArrowDown: 'down' };
+
+  let board = $state(spawn(spawn(emptyBoard())));
+  let score = $state(0);
+  let gameOver = $derived(!hasMoves(board));
+
+  function play(direction) {
+    if (!canMove(board, direction)) return;
+    const result = slide(board, direction);
+    board = spawn(result.board);
+    score += result.gained;
+  }
+
+  function onkeydown(event) {
+    const direction = keys[event.key];
+    if (direction) {
+      event.preventDefault();
+      play(direction);
+    }
+  }
+</script>
+
+<svelte:window {onkeydown} />
+
+<p>Score: {score}</p>
+{#if gameOver}<p>Game over</p>{/if}
+```
+
 ## Board and directions
 
 A board is a 4×4 array of rows. `0` is an empty cell and every other value is a tile.
